@@ -31,6 +31,7 @@ const prepareDomEvents = () => {
 	addBtn.addEventListener('click', addNewTodo);
 	ulList.addEventListener('click', checkClick);
 	popupCloseBtn.addEventListener('click', closePopup);
+	popupInput.addEventListener('keyup', enterKeyPopup);
 	popupAddBtn.addEventListener('click', changeTodoText);
 	todoInput.addEventListener('keyup', enterKeyChek);
 };
@@ -112,6 +113,12 @@ const enterKeyChek = e => {
 	if (e.key === 'Enter') {
 		addNewTodo();
 	}
+};
+
+const enterKeyPopup = e => {
+	if (e.key === 'Enter') {
+        changeTodoText();
+    }
 };
 
 document.addEventListener('DOMContentLoaded', main);
